@@ -1,0 +1,69 @@
+<div class="container mt-5">
+    <h3>Searching for something specific ?</h3>
+    <p class="text-muted">
+        use our filters to fin what you are looking for.
+    </p>
+
+ 
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <form [formGroup]="serachForm" (ngSubmit)="searchFor()" >
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="">Category</label>
+                        <select  class="form-control" formControlName="category"  >
+                            <option value="">Choose a category</option>
+                            <option [value]="c.id" *ngFor="let c of categories" >{{ c.label }}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="">Doctor name</label>
+                        <input type="text" class="form-control" formControlName="doctorName" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="">Submit</label>
+                        <button class="btn btn-primary w-100" [disabled]="! serachForm.valid">Search</button>
+                    </div>
+                    
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-5">
+        <div class="col-12 mb-3" *ngFor="let d of doctors">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                           <p>
+                            <strong>Fullname</strong> : <span class="text-muted">{{ d.fullname }}</span>
+                           </p>
+                           <p>
+                            <strong>Phone</strong> : <span class="text-muted">{{ d.phone }}</span>
+                           </p>
+                           <p>
+                            <strong>Address</strong> : <span class="text-muted">{{ d.address }}</span>
+                           </p>
+                           <p>
+                            <strong>Address</strong> :<span class="text-muted">{{ d.email }}</span> 
+                           </p>
+                           
+                           <a href="#" class="btn btn-primary">More details</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-muted">
+                              {{ d.about }}
+                            </p> 
+                            
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

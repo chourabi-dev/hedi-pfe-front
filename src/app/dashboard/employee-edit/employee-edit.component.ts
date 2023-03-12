@@ -87,7 +87,7 @@ export class EmployeeEditComponent implements OnInit {
     const role = this.signinForm.value.role;
     
     
-    
+ 
 
     this.auth.updateAccount(username,email,name,role,idEmp).subscribe((data:any)=>{
       console.log(data);

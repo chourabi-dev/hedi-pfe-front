@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from '../error-page/error-page.component';
+import { CategoriesAdminAddComponent } from './categories-admin-add/categories-admin-add.component';
+import { CategoriesAdminListComponent } from './categories-admin-list/categories-admin-list.component';
 import { DashComponent } from './dash/dash.component';
+import { DoctorAdminAddComponent } from './doctor-admin-add/doctor-admin-add.component';
+import { DoctorsAdminListComponent } from './doctors-admin-list/doctors-admin-list.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
@@ -18,6 +23,15 @@ const routes: Routes = [
     { path:'admin-users-add', component:EmployeeAddComponent },
     { path:'admin-users-edit/:id', component:EmployeeEditComponent },
 
+    { path:'doctors', component:DoctorsComponent },
+    
+
+    { path:'admin-doctors-list', component:DoctorsAdminListComponent },
+    { path:'categories-admin', component:CategoriesAdminListComponent },
+    { path:'admin-category-add', component:CategoriesAdminAddComponent },
+    { path:'admin-doctor-add', component:DoctorAdminAddComponent },
+     
+    
     
     
   ] },

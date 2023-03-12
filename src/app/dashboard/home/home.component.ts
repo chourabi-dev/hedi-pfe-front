@@ -47,14 +47,39 @@ export class HomeComponent implements OnInit {
             counter: 0,
             link: '/dashboard/home/admin-users',
             subMenus: []
-          },
- 
-          
-          
+          }, 
+          {
+            title: "Categories",
+            counter: 0,
+            link: '/dashboard/home/categories-admin',
+            subMenus: []
+          }, 
+          {
+            title: "Docteurs",
+            counter: 0,
+            link: '/dashboard/home/admin-doctors-list',
+            subMenus: []
+          }, 
 
 
           ]
           break;
+
+
+          case "ROLE_USER":
+            this.menu = [
+              
+            {
+              title: "Explorer",
+              counter: 0,
+              link: '/dashboard/home/doctors',
+              subMenus: []
+            },
+            
+  
+  
+            ]
+            break;
       }
       
     },()=>{

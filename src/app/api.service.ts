@@ -245,6 +245,101 @@ export class ApiService {
   }
 
 
+  getCategoriesList(){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/categories/list',
+      
+      httpOptions
+
+    )
+  }
+
+
+  getDoctorsList(){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/doctors/list',
+      
+      httpOptions
+
+    )
+  }
+
+
+  getDoctorsByCategoryAndName(category,name){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/doctors/search?category='+category+'&name='+name,
+      
+      httpOptions
+
+    )
+  }
+
+
+
+  addCategory(data){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.post(environment.apiEndPoint + '/api/categories/add',data,
+      
+      httpOptions
+
+    )
+  }
+
+
+
+
+  addDoctor(data){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.post(environment.apiEndPoint + '/api/doctors/add',data,
+      
+      httpOptions
+
+    )
+  }
+
+
+  
+
 
 
 
