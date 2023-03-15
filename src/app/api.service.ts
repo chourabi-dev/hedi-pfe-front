@@ -300,6 +300,25 @@ export class ApiService {
 
 
 
+  getDoctorsByID(id){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/doctors/details/'+id,
+      
+      httpOptions
+
+    )
+  }
+
+
+
   addCategory(data){
     const token = localStorage.getItem("token");
     const tokenType = localStorage.getItem("tokenType");

@@ -16,10 +16,11 @@ import { DoctorsAdminListComponent } from './doctors-admin-list/doctors-admin-li
 import { CategoriesAdminListComponent } from './categories-admin-list/categories-admin-list.component';
 import { CategoriesAdminAddComponent } from './categories-admin-add/categories-admin-add.component';
 import { DoctorAdminAddComponent } from './doctor-admin-add/doctor-admin-add.component';
+import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent ],
+  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

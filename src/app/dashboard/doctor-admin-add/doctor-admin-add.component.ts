@@ -16,6 +16,9 @@ export class DoctorAdminAddComponent implements OnInit {
     address : new FormControl('',Validators.required),
     category : new FormControl('',Validators.required),
     about : new FormControl('',Validators.required), 
+    username : new FormControl('',Validators.required), 
+    password : new FormControl('',Validators.required), 
+    
     
     
   })

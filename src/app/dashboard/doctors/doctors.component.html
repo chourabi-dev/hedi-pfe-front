@@ -53,11 +53,11 @@
                             <strong>Address</strong> :<span class="text-muted">{{ d.email }}</span> 
                            </p>
                            
-                           <a href="#" class="btn btn-primary">More details</a>
+                           <a [routerLink]="'/dashboard/home/doctors-details/'+d.id" class="btn btn-primary">More details</a>
                         </div>
                         <div class="col-sm-6">
                             <p class="text-muted">
-                              {{ d.about }}
+                              {{ d.about  }}
                             </p> 
                             
                          </div>

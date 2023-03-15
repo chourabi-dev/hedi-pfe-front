@@ -13,9 +13,7 @@ export class SignupComponent implements OnInit {
   successMsg='';
   signinForm = new FormGroup({
     username : new FormControl('',Validators.required),
-    name : new FormControl('',Validators.required),
-    category: new FormControl('',Validators.required),
-    cinId : new FormControl('',Validators.required),
+    name : new FormControl('',Validators.required),  
     email : new FormControl('',Validators.email),
     password : new FormControl('',Validators.required),
     
@@ -36,10 +34,14 @@ export class SignupComponent implements OnInit {
     const username = this.signinForm.value.username;
     const password = this.signinForm.value.password;
     const name = this.signinForm.value.name;
-    const email = this.signinForm.value.email;
-    const category = this.signinForm.value.category;
-    const cinId = this.signinForm.value.cinId;
+    const email = this.signinForm.value.email; 
     
+
+    this.auth.signUp(username,email,password,name,'ROLE_USER').toPromise().then((res)=>{
+      this.successMsg="Account created successfully";
+    }).catch((err)=>{
+      this.errMsg = "something went wrong, please try again";
+    })
     
 
     

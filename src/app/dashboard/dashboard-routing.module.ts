@@ -5,6 +5,7 @@ import { CategoriesAdminAddComponent } from './categories-admin-add/categories-a
 import { CategoriesAdminListComponent } from './categories-admin-list/categories-admin-list.component';
 import { DashComponent } from './dash/dash.component';
 import { DoctorAdminAddComponent } from './doctor-admin-add/doctor-admin-add.component';
+import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 import { DoctorsAdminListComponent } from './doctors-admin-list/doctors-admin-list.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path:'admin-users-edit/:id', component:EmployeeEditComponent },
 
     { path:'doctors', component:DoctorsComponent },
+    { path:'doctors-details/:id', component:DoctorDetailsComponent },
     
 
     { path:'admin-doctors-list', component:DoctorsAdminListComponent },
