@@ -5,6 +5,7 @@ import { CategoriesAdminAddComponent } from './categories-admin-add/categories-a
 import { CategoriesAdminListComponent } from './categories-admin-list/categories-admin-list.component';
 import { DashComponent } from './dash/dash.component';
 import { DoctorAdminAddComponent } from './doctor-admin-add/doctor-admin-add.component';
+import { DoctorBookingReservationsComponent } from './doctor-booking-reservations/doctor-booking-reservations.component';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 import { DoctorsAdminListComponent } from './doctors-admin-list/doctors-admin-list.component';
 import { DoctorsComponent } from './doctors/doctors.component';
@@ -13,6 +14,7 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeesManagemenetComponent } from './employees-managemenet/employees-managemenet.component';
 import { HomeComponent } from './home/home.component';
+import { UserBookingReservationsComponent } from './user-booking-reservations/user-booking-reservations.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -34,6 +36,12 @@ const routes: Routes = [
     { path:'admin-doctor-add', component:DoctorAdminAddComponent },
      
     
+    
+    { path:'booking-requests', component:DoctorBookingReservationsComponent },
+   
+    { path:'my-booking-requests', component:UserBookingReservationsComponent },
+   
+
     
     
   ] },

@@ -17,10 +17,12 @@ import { CategoriesAdminListComponent } from './categories-admin-list/categories
 import { CategoriesAdminAddComponent } from './categories-admin-add/categories-admin-add.component';
 import { DoctorAdminAddComponent } from './doctor-admin-add/doctor-admin-add.component';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
+import { DoctorBookingReservationsComponent } from './doctor-booking-reservations/doctor-booking-reservations.component';
+import { UserBookingReservationsComponent } from './user-booking-reservations/user-booking-reservations.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent ],
+  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent, DoctorBookingReservationsComponent, UserBookingReservationsComponent ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

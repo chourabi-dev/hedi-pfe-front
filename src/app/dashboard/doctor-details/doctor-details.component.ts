@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -12,6 +13,19 @@ export class DoctorDetailsComponent implements OnInit {
   id;
 
   doctor:any = null;
+
+
+  form = new FormGroup({
+    reservationDate : new FormControl('',Validators.required),
+    privateNote : new FormControl('',Validators.required)
+  })
+
+  showSendForm = false;
+
+
+  
+  errMsg="";
+  successMsg="";
 
   constructor(private route:ActivatedRoute,private api:ApiService) { }
 
@@ -34,6 +48,33 @@ export class DoctorDetailsComponent implements OnInit {
   }
 
 
+
+  showForm(){
+    this.showSendForm = true;
+  }
+
+
+
+  save(){
+    
+
+    this.api.bookDoctor( this.form.value , this.id ).subscribe((data:any)=>{
+      console.log(data);
+      if (data.success == true) {
+        this.successMsg="Request sent successfully.";
+        this.form.reset();
+      } else {
+        this.errMsg="Something went wrong, please try again.";
+      }
+
+      
+    },(err)=>{
+      console.log(err);
+      
+      this.errMsg="Something went wrong, please try again.";
+      
+    })
+  }
 
 
 

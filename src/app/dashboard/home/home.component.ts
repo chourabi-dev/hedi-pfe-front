@@ -69,17 +69,43 @@ export class HomeComponent implements OnInit {
           case "ROLE_USER":
             this.menu = [
               
-            {
-              title: "Explorer",
-              counter: 0,
-              link: '/dashboard/home/doctors',
-              subMenus: []
-            },
-            
-  
+              {
+                title: "Explorer",
+                counter: 0,
+                link: '/dashboard/home/doctors',
+                subMenus: []
+              },
+              
+              {
+                title: "Booking requests",
+                counter: 0,
+                link: '/dashboard/home/my-booking-requests',
+                subMenus: []
+              }
+              
+      
   
             ]
             break;
+
+
+
+            case "ROLE_DOCTOR":
+              this.menu = [
+                 
+                
+                {
+                  title: "Booking requests",
+                  counter: 0,
+                  link: '/dashboard/home/booking-requests',
+                  subMenus: []
+                },
+                
+        
+    
+              ]
+              break;
+
       }
       
     },()=>{

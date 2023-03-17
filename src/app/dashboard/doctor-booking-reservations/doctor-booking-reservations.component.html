@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <h3>Reservations requests</h3>
+
+    <hr>
+
+
+    <div class="row mt-3">
+        <div class="col-12" *ngFor="let r of reservations">
+            <div class="card">
+                <div class="card-body">
+                    
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3>{{ r.user.name }}</h3>
+                        </div> 
+
+                        <div>
+                            <span class="badge bg-warning text-white" *ngIf="r.status == 0">pending</span>
+                            <span class="badge bg-success text-white" *ngIf="r.status == 1">accepted</span>
+                            <span class="badge bg-danger text-white" *ngIf="r.status == 2">refused</span> 
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p>
+                                <strong>Email : </strong>{{ r.user.email}}
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                <strong>Phone : </strong>{{ r.phone }}
+                            </p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p>
+                                <strong>Created at : </strong>{{ r.createdAt | date:"medium" }}
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                <strong>Requested date : </strong>{{ r.reservationDate | date:"medium" }}
+                            </p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p>
+                                {{ r.privateNote }}
+                            </p>
+                        </div> 
+                        
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <button class="btn btn-success w-100">Accpet</button>
+                         </div>
+                         <div class="col">
+                            <button class="btn btn-danger w-100">Refuse</button>
+                         </div> 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
