@@ -18,9 +18,8 @@ export class DoctorAdminAddComponent implements OnInit {
     about : new FormControl('',Validators.required), 
     username : new FormControl('',Validators.required), 
     password : new FormControl('',Validators.required), 
-    
-    
-    
+    location : new FormControl('',Validators.required)
+
   })
 
 
@@ -28,6 +27,8 @@ export class DoctorAdminAddComponent implements OnInit {
   successMsg="";
 
   categories:any[] = [];
+  locations:any[] = [];
+  
   
   constructor(private api:ApiService) { }
 
@@ -35,6 +36,12 @@ export class DoctorAdminAddComponent implements OnInit {
     this.api.getCategoriesList().toPromise().then((res:any[])=>{
       this.categories = res;
     })
+
+    this.api.getServicesLocations().toPromise().then((res:any[])=>{
+      this.locations = res;
+    })
+
+    
   }
 
 

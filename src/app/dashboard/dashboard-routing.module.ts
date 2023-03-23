@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from '../error-page/error-page.component';
+import { AdminAddServicesProvidersComponent } from './admin-add-services-providers/admin-add-services-providers.component';
+import { AdminServicesProvidersComponent } from './admin-services-providers/admin-services-providers.component';
 import { CategoriesAdminAddComponent } from './categories-admin-add/categories-admin-add.component';
 import { CategoriesAdminListComponent } from './categories-admin-list/categories-admin-list.component';
 import { DashComponent } from './dash/dash.component';
@@ -34,8 +36,12 @@ const routes: Routes = [
     { path:'categories-admin', component:CategoriesAdminListComponent },
     { path:'admin-category-add', component:CategoriesAdminAddComponent },
     { path:'admin-doctor-add', component:DoctorAdminAddComponent },
-     
-    
+
+
+    { path:'admin-services-providers', component:AdminServicesProvidersComponent }, 
+    { path:'admin-add-services-providers', component:AdminAddServicesProvidersComponent },
+
+ 
     
     { path:'booking-requests', component:DoctorBookingReservationsComponent },
    

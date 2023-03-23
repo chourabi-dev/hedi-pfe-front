@@ -28,4 +28,21 @@ export class DoctorBookingReservationsComponent implements OnInit {
     })
   }
 
+
+
+  acceptRequest(id){
+    this.api.changeReservationsStatus(id,1).toPromise().then((res:any[])=>{
+       this.getData();
+      
+    })
+  }
+
+
+  refuseRequest(id){
+    this.api.changeReservationsStatus(id,2).toPromise().then((res:any[])=>{
+      this.getData();
+      
+    })
+  }
+
 }

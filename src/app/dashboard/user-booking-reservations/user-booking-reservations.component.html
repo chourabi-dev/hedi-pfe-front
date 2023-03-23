@@ -12,7 +12,10 @@
 
                     <div class="d-flex justify-content-between">
                         <div>
-                            <h3>{{ r.user.name }}</h3>
+                            <h3>{{ r.doctor.fullname }}</h3>
+                            <p class="text-muted">
+                                {{ r.doctor.category.label }}
+                            </p>
                         </div> 
 
                         <div>
@@ -25,12 +28,12 @@
                     <div class="row mt-3">
                         <div class="col">
                             <p>
-                                <strong>Email : </strong>{{ r.user.email}}
+                                <strong>Email : </strong>{{ r.doctor.email}}
                             </p>
                         </div>
                         <div class="col">
                             <p>
-                                <strong>Phone : </strong>{{ r.phone }}
+                                <strong>Phone : </strong>{{ r.doctor.phone }}
                             </p>
                         </div>
                         
@@ -55,8 +58,14 @@
                             <p>
                                 {{ r.privateNote }}
                             </p>
-                        </div> 
-                        
+                        </div>  
+                    </div>
+ 
+
+                    <div class="row mt-3" *ngIf="r.status == 1">
+                        <div class="col">
+                           <button class="btn btn-primary">Payment & services</button>
+                        </div>  
                     </div>
  
 

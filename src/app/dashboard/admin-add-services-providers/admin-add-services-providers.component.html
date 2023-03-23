@@ -1,9 +1,9 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Ajouter un nouveau docteur</h1>
+    <h1 class="h3 mb-2 text-gray-800">Ajouter un nouveau prestataire</h1>
     <p class="mb-4">
-        <a routerLink="/dashboard/home/admin-doctors-list" class="btn btn-primary">Retour</a>
+        <a routerLink="/dashboard/home/admin-services-providers" class="btn btn-primary">Retour</a>
     </p>
 
 
@@ -17,46 +17,46 @@
             <form [formGroup]="form" class="user" (ngSubmit)="addData()">
 
                 <div class="form-group">
-                    <label for="">Nom prénom</label>
-                    <input type="text" formControlName="fullname" class="form-control " id="exampleInputEmail"
-                        aria-describedby="nameHelp" >
-                </div>
-                <div class="form-group">
-                    <label for="">Télephone</label>
-                    <input type="text" formControlName="phone" class="form-control " id="exampleInputEmail"
-                        aria-describedby="nameHelp" >
-                </div>
-                <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" formControlName="email" class="form-control " id="exampleInputEmail"
-                        aria-describedby="nameHelp" >
-                </div>
-                <div class="form-group">
-                    <label for="">Adresse</label>
-                    <input type="text" formControlName="address" class="form-control " id="exampleInputEmail"
-                        aria-describedby="nameHelp" >
-                </div>
-                <div class="form-group">
-                    <label for="">A propos</label>
-                    <input type="text" formControlName="about" class="form-control " id="exampleInputEmail"
-                        aria-describedby="nameHelp" >
-                </div>
-                <div class="form-group">
                     <label for="">Category</label>
-                    <select type="text" formControlName="category" class="form-control "  >
-                        <option [value]="c.id" *ngFor="let c of categories">{{ c.label }}</option>
+                    <select formControlName="category" class="form-control " >
+                        <option value="">please choose a category</option>
+                        <option [value]="c.id" *ngFor="let c of servicesProvidersCategories">{{ c.label }}</option> 
                     </select>
                 </div>
+                
                 <div class="form-group">
                     <label for="">Location</label>
-                    <select type="text" formControlName="location" class="form-control "  >
-                        <option [value]="c.id" *ngFor="let c of locations">{{ c.location }}</option>
+                    <select formControlName="category" class="form-control " >
+                        <option value="">please choose a location</option>
+                        <option [value]="c.id" *ngFor="let c of servicesProvidersLocations">{{ c.location }}</option> 
                     </select>
                 </div>
                 
+
                 
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" formControlName="name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" formControlName="email" >
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Descreption</label>
+                    <textarea  class="form-control" formControlName="descreption" ></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Tarif service</label>
+                    <input type="number" class="form-control" formControlName="price" >
+                </div>
+                 
                 <hr>
-                <h3>Authentification</h3>
+                <h3>Authentification</h3> 
+
 
                 <div class="form-group">
                     <label for="">Username</label>
@@ -69,6 +69,9 @@
                     <input type="text" formControlName="password" class="form-control " id="exampleInputEmail"
                         aria-describedby="nameHelp" >
                 </div>
+
+
+
                
                 <button type="submit" [disabled]="! form.valid" class="btn btn-primary btn-user btn-block">
                     Créer maintenant

@@ -60,6 +60,12 @@ export class HomeComponent implements OnInit {
             link: '/dashboard/home/admin-doctors-list',
             subMenus: []
           }, 
+          {
+            title: "Services providers",
+            counter: 0,
+            link: '/dashboard/home/admin-services-providers',
+            subMenus: []
+          }, 
 
 
           ]

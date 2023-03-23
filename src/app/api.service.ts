@@ -418,6 +418,67 @@ export class ApiService {
 
 
 
+
+
+
+   
   
+  changeReservationsStatus(id,status){ 
+
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/doctors/reservation/change-status/'+id+'?status='+status,
+      
+      httpOptions
+
+    )
+  }
+
+
+
+
+
+    
+  getServicesCategories(){ 
+
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/categories-services-list', 
+      httpOptions 
+    )
+  }
+
+
+      
+  getServicesLocations(){ 
+
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/categories-services-location-list', 
+      httpOptions 
+    )
+  }
+
 
 }

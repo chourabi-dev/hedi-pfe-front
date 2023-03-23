@@ -19,10 +19,12 @@ import { DoctorAdminAddComponent } from './doctor-admin-add/doctor-admin-add.com
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 import { DoctorBookingReservationsComponent } from './doctor-booking-reservations/doctor-booking-reservations.component';
 import { UserBookingReservationsComponent } from './user-booking-reservations/user-booking-reservations.component';
+import { AdminServicesProvidersComponent } from './admin-services-providers/admin-services-providers.component';
+import { AdminAddServicesProvidersComponent } from './admin-add-services-providers/admin-add-services-providers.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent, DoctorBookingReservationsComponent, UserBookingReservationsComponent ],
+  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent, DoctorBookingReservationsComponent, UserBookingReservationsComponent, AdminServicesProvidersComponent, AdminAddServicesProvidersComponent ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
