@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-admin-services-providers',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminServicesProvidersComponent implements OnInit {
 
-  constructor() { }
+  services:any[] = [];
+
+  constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    this.api.getServiceProviders().toPromise().then((res:any[])=>{
+      this.services = res;
+    })
   }
 
 }

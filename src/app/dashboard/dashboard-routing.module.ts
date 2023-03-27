@@ -16,6 +16,7 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeesManagemenetComponent } from './employees-managemenet/employees-managemenet.component';
 import { HomeComponent } from './home/home.component';
+import { UserBookingPaymentAndServicesComponent } from './user-booking-payment-and-services/user-booking-payment-and-services.component';
 import { UserBookingReservationsComponent } from './user-booking-reservations/user-booking-reservations.component';
  
 const routes: Routes = [
@@ -46,6 +47,9 @@ const routes: Routes = [
     { path:'booking-requests', component:DoctorBookingReservationsComponent },
    
     { path:'my-booking-requests', component:UserBookingReservationsComponent },
+   
+
+    { path:'my-booking-requests/payment-services/:id', component:UserBookingPaymentAndServicesComponent },
    
 
     

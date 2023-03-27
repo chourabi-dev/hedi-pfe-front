@@ -35,8 +35,12 @@
                             <p>
                                 <strong>Phone : </strong>{{ r.doctor.phone }}
                             </p>
+                        </div> 
+                        <div class="col">
+                            <p>
+                                <strong>Location : </strong>{{ r.doctor.location.location }}
+                            </p>
                         </div>
-                        
                     </div>
 
                     <div class="row mt-3">
@@ -54,6 +58,7 @@
                     </div>
 
                     <div class="row mt-3">
+                        
                         <div class="col">
                             <p>
                                 {{ r.privateNote }}
@@ -64,7 +69,7 @@
 
                     <div class="row mt-3" *ngIf="r.status == 1">
                         <div class="col">
-                           <button class="btn btn-primary">Payment & services</button>
+                           <a class="btn btn-primary" [routerLink]="'/dashboard/home/my-booking-requests/payment-services/'+r.id">Payment & services</a>
                         </div>  
                     </div>
  

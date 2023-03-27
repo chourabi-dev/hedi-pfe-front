@@ -11,4 +11,82 @@
         <a routerLink="/dashboard/home/admin-add-services-providers" class="btn btn-primary">Ajouter</a>
     </p>
 
+
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Liste des services providers</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            
+                            <th>#</th>
+                            <th>Nom</th>  
+                            <th>Descreption</th>  
+                            <th>email</th>  
+                            <th>Username</th>  
+                            <th>Location</th>  
+                            <th>Categorie</th>
+                            <th>Pricing</th>
+                              
+                            <th>Action</th>   
+                             
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+
+                        <tr *ngFor="let d of services">
+                            <td>
+                                {{d.id}}
+                            </td>
+                            <td>
+                                {{d.user.name}}
+                            </td>
+
+                            <td>
+                                {{d.descrption}}
+                            </td>
+                            <td>
+                                {{d.user.email}}
+                            </td>
+                            <td>
+                                {{d.user.username}}
+                            </td>
+                            <td>
+                                {{d.location.location}}
+                            </td>
+                            <td>
+                                {{d.category.label}}
+                            </td>
+                            <td>
+                                {{d.pricing | currency}}
+                            </td>
+                            
+                           
+                           
+                            
+                            <td>
+                               
+                            </td>
+                            
+
+
+                            
+                        </tr>
+                        
+                        
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>

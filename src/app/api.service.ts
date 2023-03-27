@@ -417,8 +417,27 @@ export class ApiService {
   }
 
 
+  getReservationByID(id){ 
+
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/get-reservation-by-id/'+id,
+      
+      httpOptions
+
+    )
+  }
 
 
+
+  
 
 
    
@@ -480,5 +499,65 @@ export class ApiService {
     )
   }
 
+
+
+
+  addServiceProvider(data){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.post(environment.apiEndPoint + '/api/utilities/add-service-provider',data,
+      
+      httpOptions
+
+    )
+  }
+
+
+  getServiceProviders(){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/service-providers',
+      
+      httpOptions
+
+    )
+  }
+
+
+  getServiceProvidersByDoctorLocation(location){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/service-providers-by-location-of-doctor?location='+location,
+      
+      httpOptions
+
+    )
+  }
+
+
+  r
 
 }

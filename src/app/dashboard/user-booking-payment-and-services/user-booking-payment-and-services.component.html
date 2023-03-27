@@ -1,0 +1,26 @@
+<div class="container-fluid mt-5">
+    <h3>Need any services in {{ reservation != null ? reservation.doctor.location.location : "..." }} ?</h3>
+
+    <hr>
+
+
+    <div class="row mt-3">
+
+
+        <div class="col-12 mb-3" *ngFor="let s of services">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{ s.user.name }}  </h3>
+                    <p>
+                        <span class="badge bg-success rounded text-white mr-3 d-inline-block">{{ s.category.label }}</span> <span class="badge bg-primary rounded text-white">{{ s.pricing | currency }}</span>
+                    </p>
+                    <p>{{ s.descrption  }}</p>
+                    <p>You can contact us on <a href="mailto:{{ s.user.email }}">{{ s.user.email }}</a> or you can book directly from app</p>
+                    <button class="btn btn-primary">Book service</button>
+                </div>
+            </div>
+
+        </div>
+         
+    </div>
+</div>

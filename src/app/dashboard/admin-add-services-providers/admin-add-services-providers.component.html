@@ -26,7 +26,7 @@
                 
                 <div class="form-group">
                     <label for="">Location</label>
-                    <select formControlName="category" class="form-control " >
+                    <select formControlName="location" class="form-control " >
                         <option value="">please choose a location</option>
                         <option [value]="c.id" *ngFor="let c of servicesProvidersLocations">{{ c.location }}</option> 
                     </select>
