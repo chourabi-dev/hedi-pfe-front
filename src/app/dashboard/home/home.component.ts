@@ -67,6 +67,13 @@ export class HomeComponent implements OnInit {
             subMenus: []
           }, 
 
+          {
+            title: "Manage Trips",
+            counter: 0,
+            link: '/dashboard/home/admin-manage-trips',
+            subMenus: []
+          }, 
+
 
           ]
           break;
@@ -111,6 +118,24 @@ export class HomeComponent implements OnInit {
     
               ]
               break;
+
+
+
+              case "ROLE_PM":
+                this.menu = [
+                   
+                  
+                  {
+                    title: "Booking requests",
+                    counter: 0,
+                    link: '/dashboard/home/service-provider-booking-requests',
+                    subMenus: []
+                  },
+                  
+          
+      
+                ]
+                break;
 
       }
       

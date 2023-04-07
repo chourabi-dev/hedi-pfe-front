@@ -1,0 +1,57 @@
+<div class="container-fluid mt-5">
+    <h3>Please fill out the form down below</h3>
+
+    <hr>
+
+
+    <div class="row mt-3">
+
+
+        <div class="col-12 mb-3">
+            <div class="card">
+                <form [formGroup]="form" (ngSubmit)="saveData()" >
+                    <div class="card-body">
+                        
+                        <h3>More informations</h3>
+
+                        <div class="mb-3">
+                            <label for="">Date and time</label>
+                            <input type="datetime-local" class="form-control" placeholder="Date and time" formControlName="datetime" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Anything else ?</label>
+                            <textarea  class="form-control" rows="5" placeholder="Let us know if you need anything else" formControlName="descreption" ></textarea>
+                        </div>
+                        
+
+
+
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a  class="btn btn-secondary mr-3" [routerLink]="'/dashboard/home/my-booking-requests/payment-services/'+id">Back</a>
+
+                        <button [disabled]="! form.valid" class="btn btn-primary" type="submit">Add service</button>
+
+
+                        <div class="form-group my-2" *ngIf="errMsg!=''">
+                            <div class="alert alert-danger">
+                                {{errMsg}}
+                            </div>
+                        </div>
+                        <div class="form-group my-2" *ngIf="successMsg!=''">
+                            <div class="alert alert-success">
+                                {{successMsg}}
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </form>
+            </div>
+
+        </div>
+         
+    </div>
+</div>

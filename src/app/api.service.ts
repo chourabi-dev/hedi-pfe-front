@@ -558,6 +558,127 @@ export class ApiService {
   }
 
 
-  r
+  connectedServiceProviderReservations(){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/service-providers-reservations',
+      
+      httpOptions
 
+    )
+  }
+
+
+  
+  
+
+
+
+  addServiceReservation(data){
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.post(environment.apiEndPoint + '/api/utilities/add-service-to-reservation',data,
+      
+      httpOptions
+
+    )
+  }
+
+
+
+  
+
+  getBookedServiceInThisTrip(reservation){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/get-booked-service-by-reservation/'+reservation,
+      
+      httpOptions
+
+    )
+  }
+
+  closeServiceStatus(id){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/close-service-booking/'+id,
+      
+      httpOptions
+
+    )
+  }
+
+
+  
+  closeReservation(id){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/close-reservation/'+id,
+      
+      httpOptions
+
+    )
+  }
+
+
+
+    
+  getAllReservations( ){
+    
+    const token = localStorage.getItem("token");
+    const tokenType = localStorage.getItem("tokenType");
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authorization':tokenType+' '+token
+      })
+    };
+    return this.http.get(environment.apiEndPoint + '/api/utilities/get-all-reservations',
+      
+      httpOptions
+
+    )
+  }
+
+  
 }

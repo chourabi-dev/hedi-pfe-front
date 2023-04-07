@@ -1,0 +1,103 @@
+<div class="container-fluid mt-5">
+    <h3>Trip details</h3>
+
+
+
+    <div class="col-12 mb-3" *ngIf="reservation != null">
+        <div class="card">
+            <div class="card-body">
+                
+
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h3>{{ reservation.doctor.fullname }}</h3>
+                        <p class="text-muted">
+                            {{ reservation.doctor.category.label }}
+                        </p>
+                    </div> 
+
+                    <div>
+                        <span class="badge bg-warning text-white" *ngIf="reservation.status == 0">pending</span>
+                        <span class="badge bg-success text-white" *ngIf="reservation.status == 1">accepted</span>
+                        <span class="badge bg-danger text-white" *ngIf="reservation.status == 2">refused</span> 
+
+                        <span class="badge bg-warning text-white" *ngIf="reservation.arrived == 0" >en cours</span>
+                        <span class="badge bg-success text-white" *ngIf="reservation.arrived == 1" >arrived</span>
+        
+                        
+
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <p>
+                            <strong>Email : </strong>{{ reservation.doctor.email}}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <strong>Phone : </strong>{{ reservation.doctor.phone }}
+                        </p>
+                    </div> 
+                    <div class="col">
+                        <p>
+                            <strong>Location : </strong>{{ reservation.doctor.location.location }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <p>
+                            <strong>Created at : </strong>{{ reservation.createdAt | date:"medium" }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <strong>Requested date : </strong>{{ reservation.reservationDate | date:"medium" }}
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class="row mt-3">
+                    
+                    <div class="col">
+                        <p>
+                            {{ reservation.privateNote }}
+                        </p>
+                    </div>  
+                </div> 
+            </div>
+        </div>
+    </div>
+
+                
+
+    <hr>
+
+
+    <div class="row mt-3">
+
+
+        <div class="col-12 mb-3" *ngFor="let s of services">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{ s.service.user.name }}  </h3>
+                    <p>
+                        <span class="badge bg-success rounded text-white mr-3 d-inline-block">{{ s.service.category.label }}</span> <span class="badge bg-primary rounded text-white">{{ s.pricing | currency }}</span>
+                        <span class="badge bg-warning text-white" *ngIf="s.status == 0" >en cours</span>
+                        <span class="badge bg-success text-white" *ngIf="s.status == 1" >cloturé</span>
+                        
+                    </p>
+                    <p>{{ s.descreption  }}</p>
+                    <p>{{ s.reservationDate | date:'medium' }}</p> 
+ 
+                </div>
+            </div>
+
+        </div>
+         
+    </div>
+</div>

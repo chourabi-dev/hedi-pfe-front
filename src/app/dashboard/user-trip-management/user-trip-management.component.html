@@ -1,0 +1,40 @@
+<div class="container-fluid mt-5">
+    <h3>Need any services in {{ reservation != null ? reservation.doctor.location.location : "..." }} ?</h3>
+
+
+    <button class="btn btn-success" (click)="closeTrip()"  >Close Trip</button>
+
+
+    <div>
+        <span class="badge bg-warning text-white" *ngIf="reservation.arrived == 0" >en cours</span>
+        <span class="badge bg-success text-white" *ngIf="reservation.arrived == 1" >cloturé</span>
+        
+    </div>                
+
+    <hr>
+
+
+    <div class="row mt-3">
+
+
+        <div class="col-12 mb-3" *ngFor="let s of services">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{ s.service.user.name }}  </h3>
+                    <p>
+                        <span class="badge bg-success rounded text-white mr-3 d-inline-block">{{ s.service.category.label }}</span> <span class="badge bg-primary rounded text-white">{{ s.pricing | currency }}</span>
+                        <span class="badge bg-warning text-white" *ngIf="s.status == 0" >en cours</span>
+                        <span class="badge bg-success text-white" *ngIf="s.status == 1" >cloturé</span>
+                        
+                    </p>
+                    <p>{{ s.descreption  }}</p>
+                    <p>{{ s.reservationDate | date:'medium' }}</p> 
+
+                    <button  *ngIf="s.status == 0" class="btn btn-primary" (click)="closeService(s.id)">Close service</button>
+                </div>
+            </div>
+
+        </div>
+         
+    </div>
+</div>

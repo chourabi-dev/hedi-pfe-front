@@ -1,0 +1,29 @@
+<div class="container mt-5">
+
+    <h1>Booking</h1>
+
+
+    <div class="card mb-3" >
+        <div class="card-body">
+            <div class="d-flex justify-content-between" *ngFor="let data of reservations">
+                <div class="info">
+                    <h3>{{ data.service.user.name }}</h3>
+                    <p>{{ data.reservationDate | date:'medium' }}</p>
+                    <p>{{ data.descreption }}</p>
+                    
+                </div>
+                <div class="price">
+                    <p>{{ data.service.pricing | currency }}</p>
+                </div>
+                <div class="change-status">
+                    <span class="badge bg-warning text-white" *ngIf="data.status == 0" >en cours</span>
+                    <span class="badge bg-success text-white" *ngIf="data.status == 1" >cloturé</span>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+</div>

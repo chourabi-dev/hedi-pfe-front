@@ -22,10 +22,16 @@ import { UserBookingReservationsComponent } from './user-booking-reservations/us
 import { AdminServicesProvidersComponent } from './admin-services-providers/admin-services-providers.component';
 import { AdminAddServicesProvidersComponent } from './admin-add-services-providers/admin-add-services-providers.component';
 import { UserBookingPaymentAndServicesComponent } from './user-booking-payment-and-services/user-booking-payment-and-services.component';
+import { UserBookServiceComponent } from './user-book-service/user-book-service.component';
+import { ServicePaymentComponent } from './service-payment/service-payment.component';
+import { ServiceProviderBookingRequestComponent } from './service-provider-booking-request/service-provider-booking-request.component';
+import { UserTripManagementComponent } from './user-trip-management/user-trip-management.component';
+import { AdminManageTripsComponent } from './admin-manage-trips/admin-manage-trips.component';
+import { TripDetailsComponent } from './trip-details/trip-details.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent, DoctorBookingReservationsComponent, UserBookingReservationsComponent, AdminServicesProvidersComponent, AdminAddServicesProvidersComponent, UserBookingPaymentAndServicesComponent ],
+  declarations: [DashboardComponent, HomeComponent,  EmployeesManagemenetComponent, EmployeeAddComponent, DashComponent, EmployeeEditComponent,  InteventionsComponent, DoctorsComponent, DoctorsAdminListComponent, CategoriesAdminListComponent, CategoriesAdminAddComponent, DoctorAdminAddComponent, DoctorDetailsComponent, DoctorBookingReservationsComponent, UserBookingReservationsComponent, AdminServicesProvidersComponent, AdminAddServicesProvidersComponent, UserBookingPaymentAndServicesComponent, UserBookServiceComponent, ServicePaymentComponent, ServiceProviderBookingRequestComponent, UserTripManagementComponent, AdminManageTripsComponent, TripDetailsComponent ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

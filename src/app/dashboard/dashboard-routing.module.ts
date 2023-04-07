@@ -16,8 +16,14 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeesManagemenetComponent } from './employees-managemenet/employees-managemenet.component';
 import { HomeComponent } from './home/home.component';
+import { ServicePaymentComponent } from './service-payment/service-payment.component';
+import { ServiceProviderBookingRequestComponent } from './service-provider-booking-request/service-provider-booking-request.component';
+import { UserBookServiceComponent } from './user-book-service/user-book-service.component';
 import { UserBookingPaymentAndServicesComponent } from './user-booking-payment-and-services/user-booking-payment-and-services.component';
 import { UserBookingReservationsComponent } from './user-booking-reservations/user-booking-reservations.component';
+import { UserTripManagementComponent } from './user-trip-management/user-trip-management.component';
+import { AdminManageTripsComponent } from './admin-manage-trips/admin-manage-trips.component';
+import { TripDetailsComponent } from './trip-details/trip-details.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent  },
@@ -41,7 +47,11 @@ const routes: Routes = [
 
     { path:'admin-services-providers', component:AdminServicesProvidersComponent }, 
     { path:'admin-add-services-providers', component:AdminAddServicesProvidersComponent },
-
+    
+    { path:'admin-manage-trips', component:AdminManageTripsComponent },
+    
+    { path:'trip-details/:id', component:TripDetailsComponent },
+    
  
     
     { path:'booking-requests', component:DoctorBookingReservationsComponent },
@@ -51,7 +61,18 @@ const routes: Routes = [
 
     { path:'my-booking-requests/payment-services/:id', component:UserBookingPaymentAndServicesComponent },
    
+    { path:'my-booking-requests/payment-services/:id/add-service/:service', component:UserBookServiceComponent },
+   
+    { path:'reservation-payment/:id', component:ServicePaymentComponent },
+   
+    { path:'service-provider-booking-requests', component:ServiceProviderBookingRequestComponent },
+   
 
+    { path:'manage-my-trip/:id', component:UserTripManagementComponent },
+   
+
+
+    
     
     
   ] },

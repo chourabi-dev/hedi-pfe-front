@@ -1,11 +1,11 @@
 <div class="container mt-5">
-    <h3>Reservations requests</h3>
+    <h3>Trips</h3>
 
     <hr>
 
 
     <div class="row mt-3">
-        <div class="col-12" *ngFor="let r of reservations">
+        <div class="col-12 mb-3" *ngFor="let r of reservations">
             <div class="card">
                 <div class="card-body">
                     
@@ -67,12 +67,10 @@
                     </div>
  
 
-                    <div class="row mt-3" *ngIf="r.status == 1">
-                        <div class="col-4">
-                            <a class="btn btn-primary w-100" [routerLink]="'/dashboard/home/my-booking-requests/payment-services/'+r.id">Payment & services</a>
-                         </div>  
+                    <div class="row mt-3" >
+                        
                          <div class="col-4">
-                            <a class="btn btn-secondary w-100" [routerLink]="'/dashboard/home/manage-my-trip/'+r.id">Manage trip</a>
+                            <a class="btn btn-secondary w-100" [routerLink]="'/dashboard/home/trip-details/'+r.id">More details</a>
                          </div>  
                     </div>
  

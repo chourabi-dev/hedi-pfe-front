@@ -10828,6 +10828,7 @@ a:focus {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-size: 89%;
 }
 
 .bg-register-image {
@@ -10835,6 +10836,7 @@ a:focus {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-size: 89%;
 }
 
 .bg-password-image {
@@ -10842,6 +10844,7 @@ a:focus {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-size: 89%;
 }
 
 form.user .custom-checkbox.small label {
